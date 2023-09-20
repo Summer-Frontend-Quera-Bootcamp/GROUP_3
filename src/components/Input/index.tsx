@@ -13,17 +13,19 @@ const Input: React.FC<IInputProps> = ({type}) => {
       setValue(event.target.value);
     };
     
-  
+
       return (
       <div className='w-[592px] h-[72px] '>
         <input
           type={type}
           value={value}
           onChange={handleChange}
-          
+          className="w-[592px] h-[40px] rounded-md border border-input-gray bg-input-white px-1"  
       />
     </div>
      );
+    
+   
   
    
        
