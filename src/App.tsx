@@ -4,8 +4,8 @@ import Input from './components/Input';
 function App() {
   return (
     <div>
-        <Input type='text' ></Input>
-        <Input type='password'></Input>
+        <Input type='text' label='ایمیل' ></Input>
+        <Input type='password' label='رمز عبور'></Input>
     </div>
   );
 }
