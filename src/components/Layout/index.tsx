@@ -11,7 +11,7 @@ const Task: React.FC = () => {
           <div className="w-[150px] h-[24px] flex font-iran-yekan  text-[16px] leading-[19px] tracking-normal text-rightbg-black bg-clip-text text-transparent [-webkit-text-fill]">
             قبلا ثبت‌نام کرده‌ای؟
           </div>
-          <Button disabled = {false} title="ثبت‌نام" className=" bg-brand-primary cursor-pointer w-[95px] h-[40px] p-[6px] rounded-[10px] border-none gap-[10px] text-gray-secondary font-iran-yekan  "/>
+          <button  className=" bg-brand-primary cursor-pointer w-[95px] h-[40px] p-[6px] rounded-[10px] border-none gap-[10px] text-gray-secondary font-iran-yekan  ">ثبت‌نام </button>
         </div>
       </header>
 
