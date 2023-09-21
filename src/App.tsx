@@ -1,11 +1,6 @@
+import Layout from "./components/Layout";
 function App() {
-  return (
-    <div className="App">
-      <h1 className="text-body-xl font-bold m-l underline text-grape-primary">
-        فونت ایران‌یکان
-      </h1>
-    </div>
-  );
+  return <div className="App">{/* <Layout></Layout> */}</div>;
 }
 
 export default App;
