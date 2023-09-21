@@ -1,4 +1,6 @@
 import "./style.css";
+import ForgetPassword from "../Forgot";
+import ResetPassword from "../Reset";
 const Layout: React.FC = () => {
   return (
     <div className="w-full h-screen fixed m-auto ">
@@ -15,11 +17,11 @@ const Layout: React.FC = () => {
           </button>
         </div>
       </header>
-
-      {/* <div className='flex justify-center "'> first container for second container
-        <div className="form"></div> second container for form
-        </div> mohammad bakhshi complete this code  */}
-
+      <div className='flex justify-center "'>
+        <div className="form">
+          <ResetPassword />
+        </div>
+      </div>
       <div className="linear__gradient"></div>
     </div>
   );
