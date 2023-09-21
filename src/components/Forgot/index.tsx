@@ -1,9 +1,7 @@
 import { useState, FormEvent, ChangeEvent } from "react";
-import Button from "../Button";
-import Input from "../Input";
 
 const ForgetPassword: React.FC = () => {
-  const [email, setEmail] = useState<string>(""); 
+  const [email, setEmail] = useState<string>("");
   const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
 
   const handleSubmit = (event: FormEvent) => {
@@ -27,18 +25,18 @@ const ForgetPassword: React.FC = () => {
             onSubmit={handleSubmit}
             className="flex flex-col items-center justify-center w-[592] h-[140px] gap-[32px]"
           >
-            <Input
-              type="email"
-              label="ایمیل خود را وارد کنید"
-              onChange={handleEmailChange}
-              value={email}
-            />
-            <Button
+            <div className="w-[592px] h-[72px]  flex flex-col items-end gap-[px]">
+              <label className="self-end text-Yekan text-body-s text-balck">
+                ایمیل خود را وارد کنید
+              </label>
+              <input className="w-[592px] h-[40px] rounded-md border border-input-gray bg-input-white px-1" />
+            </div>
+            <button
               type="submit"
-              disabled={!email}
               className="font-iran-yekan w-148 h-12 px-3 py-3 p-[10px] gap-8 text-lg font-bold text-center text-white bg-brand-primary text-gray-secondary rounded cursor-pointer"
-              title="دریافت ایمیل بازیابی رمز عبور"
-            />
+            >
+              دریافت ایمیل بازیابی رمز عبور
+            </button>
           </form>
         </>
       ) : (
@@ -51,4 +49,3 @@ const ForgetPassword: React.FC = () => {
 };
 
 export default ForgetPassword;
-

@@ -20,6 +20,7 @@ const Layout: React.FC = () => {
       <div className='flex justify-center "'>
         <div className="form">
           <ResetPassword />
+          {/* <ForgetPassword /> */}
         </div>
       </div>
       <div className="linear__gradient"></div>
