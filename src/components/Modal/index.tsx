@@ -13,11 +13,9 @@ interface IModalProbs {
 }
 
 const Modal: React.FC<IModalProbs> = ({
-
-  // onPrevPage,
   onClick,
   modalTitle,
-  
+
   totalPages,
   children,
   buttonTitle,
@@ -25,15 +23,15 @@ const Modal: React.FC<IModalProbs> = ({
   buttonClassName,
 }): JSX.Element => {
   const [isOpen, setIsOpen] = useState(true);
-  const [currentPage,setCurrentPage] =useState(1);
-  const handlePrevPage = ()=>{
-    setCurrentPage(currentPage=>currentPage-1)
-  }
+  const [currentPage, setCurrentPage] = useState(1);
+  const handlePrevPage = () => {
+    setCurrentPage((currentPage) => currentPage - 1);
+  };
   const renderPageButtons = () => {
     const buttons = [];
-    
+
     for (let page = 1; page <= totalPages; page++) {
-      const isactive = page === currentPage;
+      const isActive = page === currentPage;
 
       buttons.push(
         <button
@@ -41,7 +39,7 @@ const Modal: React.FC<IModalProbs> = ({
           className=" w-auto h-[8px]"
           onClick={() => onPageClick(page)}
         >
-          {isactive ? (
+          {isActive ? (
             <IoEllipse className="w-[8px] h-[8px]" color="#FFFFFF" />
           ) : (
             <IoEllipse className="w-[8px] h-[8px]" color="#8A8989" />
@@ -53,9 +51,8 @@ const Modal: React.FC<IModalProbs> = ({
     return buttons;
   };
   const onPageClick = (page: number) => {
-    setCurrentPage(page)    
+    setCurrentPage(page);
   };
-
 
   return (
     <div
@@ -64,9 +61,7 @@ const Modal: React.FC<IModalProbs> = ({
       } ${modalClassname}`}
     >
       <div
-        className={` top-0 left-0 w-full h-full flex  flex-col items-center justify-between rounded-lg bg-gray-secondary gap-l  relative p-[20px] ${
-          isOpen ? "block" : "hidden"
-        } `}
+        className={' top-0 left-0 w-full h-full flex  flex-col items-center justify-between rounded-lg bg-gray-secondary gap-l  relative p-[20px] '}
       >
         {/* Header content goes here */}
         <div className="flex justify-center w-full">

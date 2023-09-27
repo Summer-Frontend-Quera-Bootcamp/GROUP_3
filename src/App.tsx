@@ -5,8 +5,14 @@ import Modal from "./components/Modal";
 function App() {
   return (
     <div className="App">
-      
-    
+      <Modal
+        modalTitle="test"
+        buttonTitle="test"
+        totalPages={5}
+        modalClassname="w-[500px]"
+      >
+        <p>test</p>
+      </Modal>
     </div>
   );
 }
