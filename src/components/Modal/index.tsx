@@ -4,11 +4,7 @@ import { IoEllipse } from "react-icons/io5";
 import { useState } from "react";
 interface IModalProbs {
   modalTitle: string;
-  // isOpen: boolean;
   onClick?: () => void; //Function for footer button
-  //   onClose: () => void; //Fonction to close modal
-  onPrevPage?: () => void; //funcion to go previous modal page
-  currentPage: number;
   totalPages: number; //Number of modal page
   children: React.ReactNode; //Content of modal's body
   buttonTitle: string; //Content of footer button
@@ -17,12 +13,11 @@ interface IModalProbs {
 }
 
 const Modal: React.FC<IModalProbs> = ({
-  //   isOpen,
-  //   onClose,
-  onPrevPage,
+
+  // onPrevPage,
   onClick,
   modalTitle,
-  currentPage,
+  
   totalPages,
   children,
   buttonTitle,
@@ -30,17 +25,20 @@ const Modal: React.FC<IModalProbs> = ({
   buttonClassName,
 }): JSX.Element => {
   const [isOpen, setIsOpen] = useState(true);
-
+  const [currentPage,setCurrentPage] =useState(1);
+  const handlePrevPage = ()=>{
+    setCurrentPage(currentPage=>currentPage-1)
+  }
   const renderPageButtons = () => {
     const buttons = [];
-
+    
     for (let page = 1; page <= totalPages; page++) {
       const isactive = page === currentPage;
 
       buttons.push(
         <button
           key={page}
-          className="text-red-800 w-auto h-[8px]"
+          className=" w-auto h-[8px]"
           onClick={() => onPageClick(page)}
         >
           {isactive ? (
@@ -54,7 +52,11 @@ const Modal: React.FC<IModalProbs> = ({
 
     return buttons;
   };
-  const onPageClick = (page: number) => {};
+  const onPageClick = (page: number) => {
+    setCurrentPage(page)    
+  };
+
+
   return (
     <div
       className={` top-0 left-0  h-full flex  flex-col items-center justify-around rounded-lg gap-l z-50 relative p-[20px] ${
@@ -81,7 +83,7 @@ const Modal: React.FC<IModalProbs> = ({
           {totalPages > 1 && currentPage > 1 && (
             <button
               className="text-gray-800 w-[24px] h-[24px] absolute left-xs"
-              onClick={onPrevPage}
+              onClick={handlePrevPage}
             >
               <MdArrowBack /> {/* Previous Page button with the arrow icon */}
             </button>
