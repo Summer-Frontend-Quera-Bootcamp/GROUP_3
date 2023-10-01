@@ -1,28 +1,32 @@
-import React from 'react'
-import Button from '../Button'
-import { BsChevronLeft , BsChevronRight } from "react-icons/bs";
+import React from "react";
+import Button from "../Button";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 const Changedate: React.FC = () => {
   return (
-    <div className='w-[200px]  h-[24] gap-xs flex'>
-      <div className='w-[30px] h-[21px] font-iran-yekan body-xs self-start '>امروز</div>
-      <div className='w-[30px] h-[24px] flex'>
+    <div className="gap-xs flex">
       <Button
-              title=""
-              disabled={false}
-              onClick={() => (0)}
-              icon={<BsChevronRight/>}
-            />
-            <Button
-            title=""
-            disabled={false}
-            onClick={() => (0)}
-            icon={<BsChevronLeft/>}
-            />
+        className="w-1/12 body-xs self-start rounded-md border-gray-secondary hover:bg-gray-secondary border-2 border-solid p-xs justify-center"
+        title="امروز"
+        disabled={false}
+      />
+      <div className="w-2/3 flex items-center gap-xs">
+        <Button
+          title=""
+          disabled={false}
+          onClick={() => 0}
+          icon={<BsChevronRight />}
+        />
+        <Button
+          title=""
+          disabled={false}
+          onClick={() => 0}
+          icon={<BsChevronLeft />}
+        />
+        <p className="body-xs">اردیبهشت ۱۴۰۲</p>
       </div>
-      <div className='w-[150px] h-[21px] body-xs font-iran-yekan self-start flex'>اردیبهشت ۱۴۰۲</div>
     </div>
-  )
-}
+  );
+};
 
-export default Changedate
+export default Changedate;
