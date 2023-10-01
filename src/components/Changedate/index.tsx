@@ -5,7 +5,13 @@ import { BsChevronLeft , BsChevronRight } from "react-icons/bs";
 const Changedate: React.FC = () => {
   return (
     <div className='w-[200px]  h-[24] gap-xs flex'>
-      <div className='w-[30px] h-[21px] font-iran-yekan body-xs self-start '>امروز</div>
+      <div className='w-[30px] h-[21px] font-iran-yekan body-xs self-start '>
+        <Button
+        title="امروز"
+        disabled={false}
+        onClick={() => (0)}
+        />
+      </div>
       <div className='w-[30px] h-[24px] flex'>
       <Button
               title=""
