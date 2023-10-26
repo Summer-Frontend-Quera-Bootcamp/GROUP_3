@@ -10,17 +10,21 @@ import ProfileLayout from "./components/Profile/Layout";
 import ProfileForm from "./components/Profile/ProfileForm";
 import AccountForm from "./components/Profile/AccountForm";
 import SettingForm from "./components/Profile/SettingForm";
-import CammonDropdown from "./components/Common/CommonDropdown";
+import FullAccess from "./components/Common/CommonDropdown/FullAccess/Index";
+import IsAndIsNot from "./components/Common/CommonDropdown/IsAndIsNot";
+import Select from "./components/Common/CommonDropdown/Select";
+import WhichProjectAccess from "./components/Common/CommonDropdown/WhichProjectAccess";
+import SearchBetween from "./components/Common/CommonDropdown/SerachBetween";
 
 function App() {
   return (
        <div className="flex justify-between bg-gray-primary">
-       <CammonDropdown type="fullaccess"></CammonDropdown>
-       <CammonDropdown type="search between filters"></CammonDropdown>
-       <CammonDropdown type="select"></CammonDropdown>
-       <CammonDropdown type="is and is not"></CammonDropdown>
-
-       <CammonDropdown type="Wich Project Access" projects={["پروژه اول", "پروژه دوم"]}></CammonDropdown>
+       <FullAccess></FullAccess>
+       <SearchBetween></SearchBetween>
+       <Select></Select>
+       <IsAndIsNot></IsAndIsNot>
+       <WhichProjectAccess projects={["پروژه اول", "پروژه دوم"]}></WhichProjectAccess>
+       
        </div> 
   );
 }
